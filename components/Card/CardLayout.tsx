@@ -19,7 +19,7 @@ const CardLayout: React.FC<ReactJSXProps> = ({ children }) => {
   return (
     <div
       onMouseMove={onMouseMove}
-      className="overflow-hidden relative duration-700 border rounded-xl hover:bg-charcoal group md:gap-8 hover:border-zinc-400/50 border-grayLight opacity-100 border-opacity-60 "
+      className={`overflow-hidden relative duration-700 border rounded-xl hover:bg-charcoal group md:gap-8 hover:border-zinc-400/50 border-grayLight opacity-100 border-opacity-60 hover:drop-shadow-yellow`}
     >
       <div className="pointer-events-none">
         <div className="absolute inset-0 z-0  transition duration-1000 [mask-image:linear-gradient(black,transparent)]" />
@@ -32,7 +32,6 @@ const CardLayout: React.FC<ReactJSXProps> = ({ children }) => {
           style={style}
         />
       </div>
-
       {children}
     </div>
   );
