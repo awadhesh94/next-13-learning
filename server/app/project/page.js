@@ -156,7 +156,7 @@ module.exports = require("next/dist/shared/lib/utils.js");
 
 /***/ }),
 
-/***/ 3329:
+/***/ 9184:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -575,7 +575,7 @@ module.exports = createProxy("/home/runner/work/next-13-learning/next-13-learnin
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [193,746,859,785,406], () => (__webpack_exec__(3329)));
+var __webpack_exports__ = __webpack_require__.X(0, [193,746,859,785,406], () => (__webpack_exec__(9184)));
 module.exports = __webpack_exports__;
 
 })();

@@ -156,7 +156,7 @@ module.exports = require("next/dist/shared/lib/utils.js");
 
 /***/ }),
 
-/***/ 7703:
+/***/ 8675:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -364,7 +364,7 @@ const Conact = ()=>{
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [193,746,785,406], () => (__webpack_exec__(7703)));
+var __webpack_exports__ = __webpack_require__.X(0, [193,746,785,406], () => (__webpack_exec__(8675)));
 module.exports = __webpack_exports__;
 
 })();
