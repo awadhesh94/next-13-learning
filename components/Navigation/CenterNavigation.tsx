@@ -4,8 +4,8 @@ import { NavigationsProps } from '../../types/navigation';
 
 const CenterNavigation: React.FC<NavigationsProps> = ({ navigations }) => {
   return (
-    <nav className="md:my-11 my-5 animate-fade-in">
-      <ul className="flex navigations-center justify-center gap-4">
+    <nav className="my-8 sm:my-0 animate-fade-in">
+      <ul className="flex justify-center gap-4 navigations-center">
         {navigations.map((navigation) => (
           <Link
             key={navigation.title}
