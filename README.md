@@ -2,7 +2,8 @@
 
 I am a frontend developer with a passion for creating dynamic and engaging web applications. My primary focus is on using modern technologies and frameworks to build intuitive user interfaces that enhance the user experience.
 
-![image](https://user-images.githubusercontent.com/121618523/236867219-af7962ec-e51f-4f7b-8540-e5d5fb472e6e.png)
+<img width="1710" alt="image" src="https://user-images.githubusercontent.com/121618523/236869928-0f638ca7-9ccd-4e08-8425-b38414827c9b.png">
+
 
 In addition to my development work, I have also created several courses on popular frontend technologies, including React, Next.js and web development. These courses are designed to help developers of all levels improve their skills and stay up-to-date with the latest trends in the industry.
 
