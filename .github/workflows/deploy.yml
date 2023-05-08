@@ -26,8 +26,9 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
-          branch: gh-pages
+          branch: main
           folder: .next
+          token: ${{ secrets.STORYBOOK_ID }}
 
       - name: Debug
         if: failure()
@@ -36,3 +37,9 @@ jobs:
           echo "Exit code: ${{ job.status }}"
           echo "Job logs:"
           cat ${{ github.workspace }}/build-and-deploy.log || echo "No logs found."
+
+      - name: Save deployment status
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: echo "JOB_STATUS=${JOB_STATUS}" >> $GITHUB_ENV
