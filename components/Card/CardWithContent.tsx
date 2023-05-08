@@ -6,6 +6,7 @@ import { Eye } from 'lucide-react';
 import { CardProps } from '../../types/card';
 
 const CardWithContent: React.FC<CardProps> = ({
+  key,
   slug,
   date,
   like,
@@ -16,7 +17,7 @@ const CardWithContent: React.FC<CardProps> = ({
   const cardContent = (
     <div>
       <div className="flex justify-between gap-2 items-center">
-        <span className="text-xs font-extraLight duration-1000 text-biege group-hover:text-pink group-hover:border-zinc-200 drop-shadow-orange">
+        <span className="text-xs font-extraLight duration-1000 text-biege group-hover:text-pink group-hover:border-zinc-200">
           {date ? date : <span>SOON</span>}
         </span>
         <span className="text-grayDark font-extraLight group-hover:text-orange text-xs  flex items-center gap-1">
@@ -44,7 +45,7 @@ const CardWithContent: React.FC<CardProps> = ({
   );
 
   const cardwithReadMore = (
-    <CardLayout>
+    <CardLayout key={key}>
       <Link href={`/project/${slug}`}>
         <article className="p-4 md:p-8">{cardReadMore}</article>
       </Link>
@@ -53,7 +54,7 @@ const CardWithContent: React.FC<CardProps> = ({
 
   const cardWithOutReadMore = (
     <div className="grid grid-cols-1 gap-4">
-      <CardLayout>
+      <CardLayout key={key}>
         <Link href={`/project/${slug}`}>
           <article className="p-4 md:p-8">{cardContent}</article>
         </Link>

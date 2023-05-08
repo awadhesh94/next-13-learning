@@ -46,4 +46,7 @@
   h1 {
     @apply z-10 text-4xl font-extraBold duration-1000 bg-white cursor-default sm:text-5xl md:text-7xl whitespace-nowrap bg-clip-text;
   }
+  .tech-stack-logo {
+    @apply sm:w-16 w-20 sm:h-16 h-20 duration-700 cursor-pointer;
+  }
 }
