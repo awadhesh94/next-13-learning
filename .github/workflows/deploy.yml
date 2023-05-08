@@ -1,4 +1,4 @@
-name: Deploy Next.js App
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -8,31 +8,23 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16.x'
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16.x'
 
-      - name: Install dependencies
-        run: yarn install
+    - name: Install Dependencies
+      run: yarn install
 
-      - name: Build Next.js app
-        run: yarn build
+    - name: Build and Export
+      run: yarn build && yarn export
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.1
-        with:
-          branch: gh-pages
-          folder: .next
-
-      - name: Debug
-        if: failure()
-        run: |
-          echo "Build and deploy failed."
-          echo "Exit code: ${{ job.status }}"
-          echo "Job logs:"
-          cat ${{ github.workspace }}/build-and-deploy.log || echo "No logs found."
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@4.1.4
+      with:
+        branch: gh-pages
+        folder: out
