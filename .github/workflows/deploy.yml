@@ -1,4 +1,4 @@
-name: Deploy Next.js App
+name: Deploy
 
 on:
   push:
@@ -8,41 +8,24 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout the repo
+      uses: actions/checkout@v3
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16.x'
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16.x'
 
-      - name: Install dependencies
-        run: yarn install
+    - name: Install dependencies
+      run: npm install
 
-      - name: Build Next.js app
-        run: yarn build
+    - name: Build the app
+      run: npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.1
-        with:
-          branch: main
-          folder: .next
-          ACCESS_TOKEN: ${{ secrets.STORYBOOK_ID }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: docs/_site # The folder the action should deploy.
-          CLEAN: true
-
-      - name: Debug
-        if: failure()
-        run: |
-          echo "Build and deploy failed."
-          echo "Exit code: ${{ job.status }}"
-          echo "Job logs:"
-          cat ${{ github.workspace }}/build-and-deploy.log || echo "No logs found."
-
-      - name: Save deployment status
-        if: always()
-        env:
-          JOB_STATUS: ${{ job.status }}
-        run: echo "JOB_STATUS=${JOB_STATUS}" >> $GITHUB_ENV
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.STORYBOOK_ID }}
+        publish_dir: ./out
