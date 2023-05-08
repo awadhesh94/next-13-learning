@@ -10,17 +10,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.4.3
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: '16.x'
+
       - name: Install dependencies
         run: yarn install
+
       - name: Build Next.js app
         run: yarn build
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
           branch: gh-pages
           folder: .next
+
+      - name: Debug
+        if: failure()
+        run: |
+          echo "Build and deploy failed."
+          echo "Exit code: ${{ job.status }}"
+          echo "Job logs:"
+          cat ${{ github.workspace }}/build-and-deploy.log || echo "No logs found."
