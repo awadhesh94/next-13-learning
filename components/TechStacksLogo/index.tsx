@@ -32,13 +32,13 @@ const TechStacksLogo = () => {
         src={ReactWithTypescriptLogo}
         alt="react-with-typescript-logo"
         id="react-with-typescript-logo"
-        className="duration-700 sm:w-16 sm:h-16 w-14 h-14 hover:drop-shadow-blue"
+        className="duration-700 sm:w-16 sm:h-16 w-14 h-14 hover:drop-shadow-biege"
       />
       <Image
         src={TypescriptLogo}
         alt="typescript-logo"
         id="typescript-logo"
-        className="duration-700 sm:w-16 sm:h-16 w-14 h-14 hover:drop-shadow-biege"
+        className="duration-700 sm:w-16 sm:h-16 w-14 h-14 hover:drop-shadow-blue"
       />
     </div>
   );

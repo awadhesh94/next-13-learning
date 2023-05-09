@@ -1,14 +1,17 @@
-/**
- * @type {import('next').NextConfig}
- */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  trailingSlash: true,
   experimental: {
     appDir: true,
   },
   images: {
-    unoptimized: true,
+    domains: ['https://awadhesh94.github.io/next-13-learning/'],
+  },
+  webpack(config) {
+    config.experiments = {
+      ...config.experiments,
+      topLevelAwait: true,
+    };
+    return config;
   },
 };
 
