@@ -1,9 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    './app/**/*.{js,ts,jsx,tsx,mdx}', // Note the addition of the `app` directory.
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+
+    // Or if using `src` directory:
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     fontFamily: {
@@ -37,7 +40,19 @@ module.exports = {
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+      dropShadow: {
+        yellow: '#fcba28 5px 5px 0px',
+        pink: '#f38ba3 5px 5px 0px',
+        lightGreen: '#cfe957 5px 5px 0px',
+        blue: '#12b5e5 5px 5px 0px',
+        purple: '#7b5ea7 5px 5px 0px',
+        carrot: '#fc7428 5px 5px 0px',
+        red: '#ed203d 5px 5px 0px',
+        green: '#0ba95b 5px 5px 0px',
+        biege: '#f9f4da 5px 5px 0px',
       },
     },
   },

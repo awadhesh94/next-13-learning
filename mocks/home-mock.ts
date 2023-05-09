@@ -4,6 +4,5 @@ import { NavigationMock } from './navigation-mock';
 export const HomeMock: HomeProps = {
   navigationsProps: NavigationMock,
   pageTitle: `hi, i'm awadhesh`,
-  pageDescription:
-    'Software developers who deliver quality software, discuss requirements in business language, pay attention to detail, resolve issues, and continuously learn to envision the big picture.',
+  pageDescription: `As a software developer with 3 years of experience in the IT industry, my passion lies in front-end development. I have created courses on React, Next.js, and web development to share my knowledge with others. I am constantly learning and adapting to new technologies to deliver high-quality solutions.`,
 };

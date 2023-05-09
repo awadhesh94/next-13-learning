@@ -41,9 +41,6 @@
 
 @layer base {
   :root {
-    @apply bg-coal text-biege text-base font-light;
-  }
-  h1 {
-    @apply z-10 text-4xl font-extraBold duration-1000 bg-white cursor-default sm:text-5xl md:text-7xl whitespace-nowrap bg-clip-text;
+    @apply text-base font-light bg-coal text-biege;
   }
 }
